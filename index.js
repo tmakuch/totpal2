@@ -61,6 +61,7 @@ app.get('/:game', (req, res) => {
     &nbsp;
     <input type="submit" value="add">
     </form>
+    Added ${ data[req.game].length } articles
     <p>
     <a href="/${req.game}/pick">pick one</a>
     <a onclick=" navigator.clipboard.writeText('${req.headers.host}/${req.game}')">copy game link</a>

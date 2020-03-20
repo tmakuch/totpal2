@@ -41,11 +41,15 @@ app.get('/', (req, res) => {
 });
 app.get('/:game/pick', (req, res) => {
     const result = data[req.game][Math.floor(Math.random() * data[req.game].length)]
-    res.send(`${styles}<h1>${result}</h1><a href="/">new</a>&nbsp;<a href="/${req.game}">back</a>`)
+    res.send(`${styles}<h1>${result}</h1><a href=`/${req.game}?clear=y`>clear</a>&nbsp;<a href="/${req.game}">back</a>`)
 })
 app.get('/:game', (req, res) => {
     if (req.query.entry) {
         data[req.game].push(req.query.entry);
+        return res.redirect(`/${req.game}`);
+    }
+    if (req.query.clear) {
+        data[req.game]=[]
         return res.redirect(`/${req.game}`);
     }
     res.send(`

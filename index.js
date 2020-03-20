@@ -5,11 +5,20 @@ const data = {}
 
 const styles = `
 <style>
+@import url('https://fonts.googleapis.com/css?family=Crafty+Girls&display=swap');
 * {
-    font-family: sans-serif;
+    font-family: 'Crafty Girls', cursive;
+    font-size: 15pt;
     text-align: center;
     margin: 1em auto;
     padding: 0.5em;
+    color:#333;
+}
+input, a {
+    background: #fff;
+    border: 1px solid #555;
+    text-decoration: none;
+    cursor: pointer;
 }
 </style>
 `
@@ -37,9 +46,18 @@ app.get('/:game', (req, res) => {
         data[req.params.game].push(req.query.entry);
         return res.redirect(`/${req.params.game}`);
     }
-    res.send(`${styles}
+    res.send(`
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TOTPAL</title>
+        ${styles}
+    </head>
+    <h2>Two of these people are lying.</h2>
     <form method="GET">
-        <input type="text" name="entry" autofocus><input type="submit" value="add">
+        <input type="text" name="entry" autofocus>
+        <br>
+        <input type="submit" value="add">
     </form>
     <p>
         <a href="/${req.params.game}/pick">pick one</a>

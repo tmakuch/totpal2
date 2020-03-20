@@ -27,7 +27,6 @@ const head = `
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TOTPAL ${req.game}</title>
         ${styles}
     </head>
 `
@@ -50,7 +49,7 @@ app.get('/', (req, res) => {
 });
 app.get('/:game/pick', (req, res) => {
     const result = data[req.game][Math.floor(Math.random() * data[req.game].length)]
-    res.send(`${head}<h1>${result}</h1><a href=`/${req.game}?clear=y`>clear</a>&nbsp;<a href="/${req.game}">back</a>`)
+    res.send(`${head}<h1>${result}</h1><a href="/${req.game}?clear=y">clear</a>&nbsp;<a href="/${req.game}">back</a>`)
 })
 app.get('/:game', (req, res) => {
     if (req.query.entry) {

@@ -20,6 +20,10 @@ input, a {
     text-decoration: none;
     cursor: pointer;
 }
+small * {
+    font-size: 0.8em;
+    border: none;
+}
 </style>
 `
 
@@ -33,7 +37,7 @@ const head = `
 
 app.listen(3000, err => {
     if (err) throw err
-    console.log(`> Ready On Server http://localhost:3000`)
+    console.log(`> http://localhost:3000`)
 });
 
 app.use('/:game', (req, res, next) => {
@@ -73,6 +77,8 @@ app.get('/:game', (req, res) => {
     <a href="/${req.game}/pick">pick one</a>
     <a onclick=" navigator.clipboard.writeText('${req.headers.host}/${req.game}')">copy game link</a>
     </p>
+    <br>
+    <p><small><a href="https://www.youtube.com/watch?v=3yFEfOYTNoE">Learn the rules of the game</a></small></p>
     `)
 
 });

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+module.exports = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -37,14 +37,14 @@
 <!--      &nbsp;-->
 <!--      <input type="submit" value="add">-->
 <!--    </form>-->
-<!--    Added ${data[req.game].length} articles-->
+<!--    Added {data[req.game].length} articles-->
 <!--    <p>-->
-<!--      <a href="/${req.game}/pick">pick one</a>-->
-<!--      <a onclick=" navigator.clipboard.writeText('${req.headers.host}/${-->
+<!--      <a href="/{req.game}/pick">pick one</a>-->
+<!--      <a onclick=" navigator.clipboard.writeText('{req.headers.host}/{-->
 <!--          req.game-->
 <!--      }')">copy game link</a>-->
 <!--    </p>-->
 <!--    <br>-->
 <!--    <p><small><a href="https://www.youtube.com/watch?v=3yFEfOYTNoE">Learn the rules of the game</a></small></p>-->
   </body>
-</html>
+</html>`;

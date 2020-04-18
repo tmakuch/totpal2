@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path");
+const indexHtml = require("./index.html.js");
 const app = express();
 
 const data = {};
@@ -25,5 +25,5 @@ app.get("/", (req, res) => {
     );
 });
 app.get("/:game", (req, res) => {
-    res.sendFile(path.resolve("./index.html"));
+    res.set("Content-Type", "text/html").send(indexHtml);
 });

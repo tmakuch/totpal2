@@ -1,0 +1,9 @@
+{
+  "short_name": "Totpal",
+  "name": "Two of those people are lying",
+  "description": "Simple app that allows you to pick topic for totpal during COVID season",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation":  "landscape",
+  "theme_color": "#000000"
+}
